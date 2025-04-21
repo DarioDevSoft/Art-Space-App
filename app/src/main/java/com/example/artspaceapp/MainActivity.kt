@@ -17,6 +17,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -129,10 +131,12 @@ fun ImageWithTitleAndLocation(
     Column (
         modifier = modifier
             .fillMaxSize()
-            .padding(20.dp, 5.dp),
-        verticalArrangement = Arrangement.Bottom,
+            .padding(20.dp, 5.dp)
+            .verticalScroll(rememberScrollState()),
+        verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        Spacer(modifier = Modifier.height(100.dp))
         BoxWithImage(
             imageResourceId = imageResourceId,
             contentDescriptionId = contentDescriptionId
